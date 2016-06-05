@@ -1,4 +1,4 @@
-module.exports = {
+var utils = {
   compose: function(){
     var args = Array.from(arguments).reverse();
     return function(x) {
@@ -17,3 +17,4 @@ module.exports = {
   reverse: (x) => x.reverse(),
   toString: (x) => x.toString()
 }
+export { utils };
