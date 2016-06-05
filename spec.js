@@ -1,7 +1,7 @@
 'use strict';
 
-var test = require('tape');
-var u = require('./utils');
+import { test } from "tape";
+import { utils as u } from "./utils";
 
 test('simple methods', assert => {
   let test, actual, expected;

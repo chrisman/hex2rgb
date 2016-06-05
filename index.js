@@ -1,5 +1,6 @@
 'use strict'
-var _ = require('./utils');
+import { utils as _ } from "./utils";
+
 // a hex:dec dictionary!
 var dict = {
   '0': 0, '1': 1, '2': 2, '3': 3,
