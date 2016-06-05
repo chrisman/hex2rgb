@@ -1,0 +1,22 @@
+{
+  "name": "hex",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node spec.js | faucet",
+    "example": "node index.js \"#ffeedd\"",
+    "cover": "node_modules/.bin/isparta cover --report text spec.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^2.11.1",
+    "faucet": "0.0.1",
+    "isparta": "^4.0.0",
+    "tape": "^4.5.1"
+  },
+  "dependencies": {
+    "babel-preset-es2015": "^6.9.0"
+  }
+}
