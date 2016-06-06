@@ -49,7 +49,7 @@ test('simple methods', assert => {
   assert.equal(actual(test), expected,
     'toString should return a string'
   );
-  assert.ok(typeof actual(test === 'string'));
+  assert.ok(typeof actual(test) === 'string');
 
   test = 42;
   actual = u.log('log message');
