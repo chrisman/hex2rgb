@@ -14,11 +14,15 @@ test('simple methods', assert => {
     'head should return a[0]'
   );
 
-  test = "i and love and you".split(' ');
-  actual = u.tail;
+  test = "i and love and you";
+  actual = u.compose(
+    u.join(' '),
+    u.tail,
+    u.split(' ')
+  );
   expected = 'and love and you';
 
-  assert.deepEqual(actual(test).join(' '), expected,
+  assert.deepEqual(actual(test), expected,
     'tail should return the array minus its head'
   );
 
@@ -92,11 +96,12 @@ test('composing methods', assert => {
   test = ['ff', 'ff', 'ff'];
   actual = u.compose(
     u.join(','),
-    u.map(e => e
-      .split('')
-      .reverse()
-      .map((e,i) => Math.pow(16,i)*15)
-      .reduce((x,y) => x + y)
+    u.map(e => u.compose(
+        u.reduce((x, y) => x + y),
+        u.map((e, i) => Math.pow(16,i)*15),
+        u.reverse,
+        u.split('')
+      )(e)
     )
   );
   expected = '255,255,255';
