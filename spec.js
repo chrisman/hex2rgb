@@ -7,6 +7,22 @@ test('simple methods', assert => {
   let test, actual, expected;
 
   test = "i and love and you";
+  actual = u.head;
+  expected = 'i';
+
+  assert.deepEqual(actual(test), expected,
+    'head should return a[0]'
+  );
+
+  test = "i and love and you".split(' ');
+  actual = u.tail;
+  expected = 'and love and you';
+
+  assert.deepEqual(actual(test).join(' '), expected,
+    'tail should return the array minus its head'
+  );
+
+  test = "i and love and you";
   actual = u.split(' and ');
   expected = ['i', 'love', 'you'];
 
