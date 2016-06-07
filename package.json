@@ -4,9 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "babel-node spec.js | faucet",
-    "example": "babel-node index.js \"#ffeedd\"",
-    "cover": "babel-node node_modules/.bin/isparta cover --report text spec.js"
+    "test": "babel-node *.spec.js | faucet",
+    "cover": "babel-node node_modules/.bin/isparta cover --report text *.spec.js"
   },
   "author": "",
   "license": "ISC",

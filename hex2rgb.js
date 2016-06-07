@@ -11,7 +11,9 @@ const dict = {
 let add = _.reduce((x, y) => x + y);
 let convert = _.map((e, i) => Math.pow(16, i) * dict[e]);
 // computation
-let result = _.compose (
+// takes an array of hex bits
+// e.g. ['ff', 'ee', 'dd']
+let result = _.compose(
   _.join(','),
   _.map(e => _.compose(
     add,
@@ -20,7 +22,12 @@ let result = _.compose (
     _.split('')
   )(e))
 );
+// string -> array
+// e.g. '#ffeedd' -> ['ff', 'ee', 'dd']
+let splitter = (s) => [
+  s.slice(1, 3),
+  s.slice(3, 5),
+  s.slice(5, 7)
+];
 
-console.log( result('#ffffff') );
-
-export default result;
+export { result, splitter };
