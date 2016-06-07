@@ -4,12 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "babel-node *.spec.js | faucet",
-    "cover": "babel-node node_modules/.bin/isparta cover --report text *.spec.js"
+    "test": "babel-node spec/*.spec.js | faucet",
+    "cover": "babel-node node_modules/.bin/isparta cover --report text spec/*.spec.js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "babel-cli": "^6.9.0",
     "eslint": "^2.11.1",
     "faucet": "0.0.1",
     "isparta": "^4.0.0",

@@ -1,4 +1,4 @@
-import { result as convert, splitter } from './hex2rgb';
+import { result as convert, splitter } from '../hex2rgb';
 import { test } from 'tape';
 
 test('splitter', plan => {

@@ -10,7 +10,11 @@ Pass a hex color value as a command line parameter.
 
 example: `node index.js '#ffddee'`, or `npm run example`
 
-tests: `npm test`
+tests: 
+
+if you need to, `npm install -g babel-node`
+
+`npm test`
 
 coverage: `npm run cover`
 

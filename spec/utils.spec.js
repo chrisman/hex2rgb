@@ -1,7 +1,7 @@
 'use strict';
 
 import { test } from "tape";
-import { utils as u } from "./utils";
+import { utils as u } from "../utils";
 
 test('simple methods', assert => {
   let test, actual, expected;
@@ -82,9 +82,9 @@ test('composing methods', assert => {
 
   test = 'i and love and you';
   actual = u.compose(
-    u.join(' and '), 
-    u.map(e => e.toUpperCase()), 
-    u.reverse, 
+    u.join(' and '),
+    u.map(e => e.toUpperCase()),
+    u.reverse,
     u.split(' and ' )
   );
   expected = 'YOU and LOVE and I';
