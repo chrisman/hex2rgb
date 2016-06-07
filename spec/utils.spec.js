@@ -9,7 +9,6 @@ test('simple methods', assert => {
   test = "i and love and you";
   actual = u.head;
   expected = 'i';
-
   assert.deepEqual(actual(test), expected,
     'head should return a[0]'
   );
@@ -21,7 +20,6 @@ test('simple methods', assert => {
     u.split(' ')
   );
   expected = 'and love and you';
-
   assert.deepEqual(actual(test), expected,
     'tail should return the array minus its head'
   );
@@ -29,7 +27,6 @@ test('simple methods', assert => {
   test = "i and love and you";
   actual = u.split(' and ');
   expected = ['i', 'love', 'you'];
-
   assert.deepEqual(actual(test), expected,
     'should curry and split'
   );
@@ -45,7 +42,6 @@ test('simple methods', assert => {
   test = 42;
   actual = u.toString;
   expected = '42';
-
   assert.equal(actual(test), expected,
     'toString should return a string'
   );
@@ -61,7 +57,6 @@ test('simple methods', assert => {
   test = ['dog', 'cat', 'lizard'];
   actual = u.map(e => e.toUpperCase());
   expected = ['DOG', 'CAT', 'LIZARD'];
-
   assert.deepEqual(actual(test), expected,
     'should map an array'
   );
@@ -69,7 +64,6 @@ test('simple methods', assert => {
   test = ['dog', 'cat', 'lizard'];
   actual = u.reduce((x, y) => x + y);
   expected = 'dogcatlizard';
-
   assert.deepEqual(actual(test), expected,
     'should reduce an array'
   );
