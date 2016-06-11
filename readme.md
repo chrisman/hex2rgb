@@ -8,19 +8,21 @@ Pass a hex color value as a command line parameter.
 
 `npm install`
 
-example: `node index.js '#ffddee'`, or `npm run example`
-
 tests: 
 
-if you need to, `npm install -g babel-node`
+* local unit tests: `npm test`
 
-`npm test`
+* test in headless testling browser: `npm browser`
 
-coverage: `npm run cover`
+* code coverage: `npm run cover`
+
+integration:
+
+* https://ci.testling.com/chrisman/hex2rgb
 
 ## notes
-This turned out to be an exercise in es2015 import/export, babel-node, and test coverage. (first time using isparta.)
 
+This turned out to be an exercise in es2015 import/export, babel-node, and test coverage. (first time using isparta.)
 
 __historical:__
     
