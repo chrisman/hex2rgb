@@ -4,13 +4,29 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "babel-node spec/*.spec.js | faucet",
-    "cover": "babel-node node_modules/.bin/isparta cover --report text spec/*.spec.js"
+    "test": "babel-node tape spec/*spec.js",
+    "cover": "babel-node node_modules/.bin/isparta cover --report text spec/*spec.js",
+    "browser": "browserify spec/*spec.js -t [ babelify --presets [ es2015 ] ] | testling | faucet"
+  },
+  "testling": {
+    "files": "spec/*spec.js",
+    "browsers": [
+      "ie/8..10",
+      "chrome/22..latest",
+      "firefox/16..latest",
+      "safari/5..latest",
+      "opera/11..latest",
+      "iphone/6",
+      "ipad/6",
+      "android-browser/latest"
+    ],
+    "preprocess": "browserify -t [ babelify --presets [ es2015 ] ]"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "babel-cli": "^6.9.0",
+    "babelify": "^7.3.0",
     "eslint": "^2.11.1",
     "faucet": "0.0.1",
     "isparta": "^4.0.0",
